@@ -1,0 +1,12 @@
+.authContainer {
+  height: 80vh;
+  width: 45vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.authCard {
+  border: 20px solid #001529;
+  height: 100%;
+}

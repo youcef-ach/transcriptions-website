@@ -1,0 +1,29 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px;
+}
+
+.homeContainer {
+    height: 100%;
+}
+
+.logo {
+    color: white;
+}
+
+.menu {
+    width: 35%
+}
+
+.contentContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.layout {
+    height: 100vh;
+    width: 100vw;
+    border: 1px solid red;
+}
