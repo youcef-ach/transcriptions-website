@@ -112,7 +112,11 @@ const collapseItems = [
   {
     key: 1,
     label: "see the full text transcription",
-    children: <Text style={{fontSize:"1.2rem"}}>{details.audio_transc}</Text>,
+    children: (
+      <Text style={{ fontSize: "1.2rem" }} copyable>
+        {details.audio_transc}
+      </Text>
+    ),
   },
   {
     key: 2,
