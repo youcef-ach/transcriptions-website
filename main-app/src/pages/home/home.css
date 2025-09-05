@@ -1,29 +1,44 @@
 .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 24px;
-}
-
-.homeContainer {
-    height: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
 }
 
 .logo {
-    color: white;
+  color: white;
 }
 
 .menu {
-    width: 35%
+  width: 36%;
+  height: 100%;
+  align-items: center;
+  overflow: hidden;
+}
+
+.contentWrapper {
+  height: 90%;
+  width: 100%;
 }
 
 .contentContainer {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
 }
 
 .layout {
-    height: 100vh;
-    width: 100vw;
-    border: 1px solid red;
+  height: 100%;
+  width: 100%;
+}
+
+.homeContainer {
+  width: 100%;
+  height: 100%;
+  padding: 10px 30px;
+}
+
+.headerWrapper {
+  height: 8%;
 }

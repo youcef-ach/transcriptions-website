@@ -1,0 +1,121 @@
+.transcriptionContainer {
+  width: 100%;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.rightPart {
+  padding: 10px !important;
+}
+
+.segmentCard .ant-card-actions {
+  height: 25px;
+  align-items: center;
+}
+
+.segmentCard .ant-card-head {
+  height: 50px !important;
+  align-items: center;
+  min-height: 20px !important;
+  border-bottom: 1px solid #001529;
+}
+
+.segmentTxt {
+  margin-top: 20px;
+  display: block;
+  font-size: 1.3rem;
+  line-height: 2.2rem;
+  padding: 0 60px;
+  border-left: 3px solid #001529;
+}
+
+.splitterContainer {
+  height: 80%;
+}
+
+.splitter {
+  height: 100%;
+}
+
+.avatar {
+  height: 50px;
+  width: 50px;
+}
+
+/* .audio {
+  position: absolute;
+  z-index: -100;
+} */
+
+.subHeaderFlex {
+  width: 100%;
+}
+
+.icon {
+  font-size: 1.7rem;
+  color: #001529;
+}
+
+.sliderContainer {
+  width: 80%;
+}
+
+.slider {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+#audio {
+  position: absolute;
+  left: -10000px;
+}
+
+.frameContainer {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.frameContainer .frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.leftPart {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 18px !important;
+}
+
+.optionsMenu {
+  height: 15%;
+  width: 100%;
+}
+
+.optionsMenu {
+  transition: all 1ms ease;
+}
+
+.icon {
+  font-size: 24px;
+  color: #001529;
+  cursor: pointer;
+  transition: color 1ms;
+}
+
+.icon:hover {
+  color: #40a9ff;
+}
+
+.optionsFlex .ant-select-selector {
+  text-align: center;
+}

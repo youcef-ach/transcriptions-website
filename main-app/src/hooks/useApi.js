@@ -1,15 +1,13 @@
-import { useState } from "react";
 import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
 const apiUrl = import.meta.env.VITE_API_URL;
 
 export const api = axios.create({
-  baseURL: apiUrl,
+  baseURL: "http://193.194.66.152:8080/api/",
 });
 
 const authInterceptor = async (config) => {
-  setLoading(true);
   if (localStorage.getItem("access-token")) {
     const token = jwtDecode(localStorage.getItem("access-token"));
     if (token.exp < Math.floor(Date.now() / 1000)) {

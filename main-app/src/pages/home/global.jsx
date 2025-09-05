@@ -28,7 +28,7 @@ const menuItems = [
   },
   {
     key: "6",
-    label: <Link to="/dashboard">dashboard</Link>,
+    label: <Link to="/dashboard">upload</Link>,
   },
 ];
 
@@ -38,19 +38,23 @@ function global() {
   return (
     <div className="fullHW">
       <Layout className="layout">
-        <Header className="header">
-          <div className="logo">LOGO</div>
-          <Menu
-            theme="dark"
-            mode="horizontal"
-            defaultSelectedKeys={["2"]}
-            items={menuItems}
-            className="menu"
-          />
-        </Header>
-        <Content className="contentContainer">
-          <Outlet />
-        </Content>
+        <div className="headerWrapper">
+          <Header className="header">
+            <div className="logo">LOGO</div>
+            <Menu
+              theme="dark"
+              mode="horizontal"
+              defaultSelectedKeys={["2"]}
+              items={menuItems}
+              className="menu"
+            />
+          </Header>
+        </div>
+        <div className="contentWrapper">
+          <Content className="contentContainer">
+            <Outlet />
+          </Content>
+        </div>
       </Layout>
     </div>
   );
