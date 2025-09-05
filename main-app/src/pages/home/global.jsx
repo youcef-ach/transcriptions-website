@@ -8,19 +8,19 @@ import { Content } from "antd/es/layout/layout";
 const menuItems = [
   {
     key: "1",
-    label: <Link to="/home">home</Link>,
+    label: <Link to="/">home</Link>,
   },
   {
     key: "2",
-    label: "why transcripta",
+    label: <Link to="/whyTranscripta">Why transcripta</Link>,
   },
   {
     key: "3",
-    label: "pricing",
+    label: <Link to="/pricing">Pricing</Link>,
   },
   {
     key: "4",
-    label: "About",
+    label: <Link to="/about">about</Link>,
   },
   {
     key: "5",
@@ -44,7 +44,7 @@ function global() {
             <Menu
               theme="dark"
               mode="horizontal"
-              defaultSelectedKeys={["2"]}
+              defaultSelectedKeys={['1']}
               items={menuItems}
               className="menu"
             />

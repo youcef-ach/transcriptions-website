@@ -163,7 +163,7 @@ function dashboard() {
           subTitle="The transcription process may take 1-5 minutes, please wait."
           extra={[
             <Button type="primary" key="console">
-              <Link to="/home">Go Home</Link>
+              <Link to="/">Go Home</Link>
             </Button>,
             <Button
               key="buy"

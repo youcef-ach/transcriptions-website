@@ -5,7 +5,10 @@ import Global from "./pages/home/global";
 import Home from "./pages/home/home.jsx";
 import Dashboard from "./pages/dashboard/dashboard.jsx";
 import Transcription from "./pages/transcription/transcription.jsx";
-import TranscriptionDetailed from './pages/transcription/transcription_detailed-log.jsx'
+import TranscriptionDetailed from "./pages/transcription/transcription_detailed-log.jsx";
+import About from "./pages/StandardPages/About.jsx";
+import Why from "./pages/StandardPages/Why.jsx";
+import Price from "./pages/StandardPages/Price.jsx";
 
 export const windowCtx = createContext();
 
@@ -15,7 +18,7 @@ const myRouter = createBrowserRouter([
     element: <Global />,
     children: [
       {
-        path: "home",
+        path: "",
         element: <Home />,
       },
       {
@@ -32,8 +35,20 @@ const myRouter = createBrowserRouter([
       },
       {
         path: "detailed-log",
-        element: <TranscriptionDetailed />
-      }
+        element: <TranscriptionDetailed />,
+      },
+      {
+        path: "about",
+        element: <About />,
+      },
+      {
+        path: "whyTranscripta",
+        element: <Why />,
+      },
+      {
+        path: "pricing",
+        element: <Price />,
+      },
     ],
   },
 ]);
