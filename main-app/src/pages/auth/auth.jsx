@@ -1,31 +1,37 @@
-import React, { useRef, useState } from "react";
-import { Button, Card, Carousel, Form, Input, message, Typography } from "antd";
+import { useRef, useState } from "react";
+import {
+  Button,
+  Card,
+  Carousel,
+  Form,
+  Input,
+  message,
+  Result,
+  Typography,
+} from "antd";
 import "./auth.css";
-import { api } from "../../hooks/useApi.js";
+import { api } from "../../hooks/useApi";
+import { useNavigate } from "react-router-dom";
 
 const { Title, Text, Link } = Typography;
 
 function test() {
   const myRef = useRef(null);
   const [loading, setLoading] = useState(false);
+  const redirect = useNavigate();
 
   const handleLogin = async (values) => {
     setLoading(true);
     try {
-      // result = api.post("/auth/token", {
-      //   ...values,
-      // });
-      // if (result.access && result.refrsh) {
-        localStorage.setItem(
-          "access-token",
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTc1NzAyOTcyNywiaWF0IjoxNzU2OTQzMzI3LCJqdGkiOiI0MGQxZDAwYTQ4MmU0MjQ5YjU1MWY4MmU3MGVkZmY5NyIsInVzZXJfaWQiOjEyfQ.5pT0E-7XbVIb0QMdBCR0HAzEUMwZnCMJ3frZYzIS0k8"
-        );
-        localStorage.setItem(
-          "refresh-token",
-          "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzU2OTQzNjI3LCJpYXQiOjE3NTY5NDMzMjcsImp0aSI6IjI5ODhkYTIxOTg2MjRkMDZhNDAzMjE2ODFiYTkwNGFiIiwidXNlcl9pZCI6MTJ9.5hqEktxx0Ne7eXwoFvilceHeKYprOq9Lykrkx3wrdz8"
-        );
-        message.success("logged in");
-      // } else throw new Error("something wrong");
+      const res = await api.post("/api/token/", {
+        username: values.username,
+        password: values.password,
+      });
+      localStorage.setItem("access-token", res.data.access);
+      localStorage.setItem("refresh-token", res.data.refresh);
+      message.success("success");
+      setLoading(false);
+      redirect("/");
     } catch {
       console.log("something went wrong");
       message.error("something went wrong");
@@ -36,7 +42,13 @@ function test() {
   return (
     <>
       <div className="authContainer">
-        <Carousel className="carousel" speed={300} dots={false} infinite={false} ref={myRef}>
+        <Carousel
+          className="carousel"
+          speed={300}
+          dots={false}
+          infinite={false}
+          ref={myRef}
+        >
           <div className="authCard authCard1">
             <div className="tCenter">
               <Title style={{ margin: 0 }} level={1}>
@@ -65,7 +77,12 @@ function test() {
                 <Input.Password placeholder="password" />
               </Form.Item>
               <Form.Item wrapperCol={{ span: 24 }} className="noMargPad">
-                <Button type="primary" htmlType="submit" block>
+                <Button
+                  type="primary"
+                  htmlType="submit"
+                  block
+                  loading={loading}
+                >
                   submit
                 </Button>
               </Form.Item>

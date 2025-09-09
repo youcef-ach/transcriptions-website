@@ -4,7 +4,7 @@ import { jwtDecode } from "jwt-decode";
 const apiUrl = import.meta.env.VITE_API_URL;
 
 export const api = axios.create({
-  baseURL: "http://193.194.66.152:8080/api/",
+  baseURL: "http://localhost:8000/proxy/",
 });
 
 const authInterceptor = async (config) => {

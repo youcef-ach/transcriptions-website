@@ -6,6 +6,7 @@ import "antd/dist/reset.css";
 import App from "./App.jsx";
 import "@ant-design/v5-patch-for-react-19";
 import { jwtDecode } from "jwt-decode";
+import YouTubePlayer from "./pages/transcription/youtubePlayer.jsx";
 
 unstableSetRender((node, container) => {
   container._reactRoot ||= createRoot(container);
@@ -21,6 +22,7 @@ let root = document.getElementById("root");
 root = createRoot(root);
 root.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <YouTubePlayer />
   </React.StrictMode>
 );

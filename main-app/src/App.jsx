@@ -10,7 +10,7 @@ import About from "./pages/StandardPages/About.jsx";
 import Why from "./pages/StandardPages/Why.jsx";
 import Price from "./pages/StandardPages/Price.jsx";
 
-export const windowCtx = createContext();
+export const globalCtx = createContext();
 
 const myRouter = createBrowserRouter([
   {
@@ -53,24 +53,24 @@ const myRouter = createBrowserRouter([
   },
 ]);
 
+const windowResize = () =>
+  setWindowDimentions([window.innerHeight, window.innerWidth]);
+
 const App = () => {
   const [windowDimentions, setWindowDimentions] = useState([
     window.innerHeight,
     window.innerWidth,
   ]);
 
-  useEffect(
-    () =>
-      window.addEventListener("resize", () =>
-        setWindowDimentions([window.innerHeight, window.innerWidth])
-      ),
-    []
-  );
+  useEffect(() => {
+    window.addEventListener("resize", windowResize);
+    return window.removeEventListener("resize", windowResize);
+  }, []);
 
   return (
-    <windowCtx.Provider value={windowDimentions}>
+    <globalCtx.Provider value={windowDimentions}>
       <RouterProvider router={myRouter} />
-    </windowCtx.Provider>
+    </globalCtx.Provider>
   );
 };
 export default App;
