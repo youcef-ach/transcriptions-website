@@ -44,3 +44,4 @@ class ProxyGatewayTests(TestCase):
         request = self.factory.generic("PATCH", "/proxy/api/test/")
         response = proxy_view(request, "api/test/")
         self.assertEqual(response.status_code, 405)
+
