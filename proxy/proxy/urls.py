@@ -1,14 +1,15 @@
+import os
+import requests
 from django.contrib import admin
 from django.urls import path
-import requests
 from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 
 
 @csrf_exempt
 def proxy_view(request, path):
-    REMOTE_API = "http://193.194.66.152:8080/"
-    url = f"{REMOTE_API}/{path}"
+    remote_api = os.getenv("REMOTE_TRANSCRIPTION_API", "http://193.194.66.152:8080/").rstrip("/")
+    url = f"{remote_api}/{path}"
     method = request.method
 
     headers = {k: v for k, v in request.headers.items() if k.lower() != "host"}
