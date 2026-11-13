@@ -1,19 +1,22 @@
 # TranscribeFlow — Audio/Video Transcription & Synchronized Playback Platform
 
+## Verification scope
+
+The frontend tests include a copied time-formatting function rather than importing the production implementation. They do not establish recording, transcription or complete session correctness.
+
 [![React](https://img.shields.io/badge/React-19.1+-61DAFB?style=flat&logo=react&logoColor=black)](https://react.dev/)
 [![Django](https://img.shields.io/badge/Django-5.0+-092E20?style=flat&logo=django&logoColor=white)](https://www.djangoproject.com/)
 [![MUI](https://img.shields.io/badge/MUI-Material_UI-007FFF?style=flat&logo=mui&logoColor=white)](https://mui.com/)
 [![Ant Design](https://img.shields.io/badge/Ant_Design-5.27+-0170FE?style=flat&logo=ant-design&logoColor=white)](https://ant.design/)
 [![Vite](https://img.shields.io/badge/Vite-7.1+-646CFF?style=flat&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-An enterprise media review platform combining a **React 19** frontend with a **Django Reverse Proxy Gateway** to stream, scrub, and inspect timestamp-synchronized audio and video transcriptions. Designed for automated speech-to-text review, the platform features word-level timeline synchronization, automatic JWT expiration detection with silent token renewal, and CORS-isolated proxy streaming.
+A media review prototype combining a **React 19** frontend with a **Django Reverse Proxy Gateway** to stream, scrub, and inspect timestamp-synchronized audio and video transcriptions. Designed for automated speech-to-text review, the platform features word-level timeline synchronization, automatic JWT expiration detection with silent token renewal, and CORS-isolated proxy streaming.
 
 ---
 
 ## Architectural Blueprint
 
-The platform decouples client playback state from upstream speech transcription services via a high-performance Django proxy gateway:
+The platform decouples client playback state from upstream speech transcription services via a Django proxy gateway; throughput has not been benchmarked:
 
 ```mermaid
 graph TD
@@ -170,5 +173,5 @@ npm test
 
 ## License
 
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+No repository license has been specified. Third-party dependencies, brands and assets retain their respective terms.
 
